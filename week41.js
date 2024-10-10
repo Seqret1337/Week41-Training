@@ -34,8 +34,21 @@ for (let index = 0; index < people.length; index++) {
 */
 console.log("Task: A");
 
+const numbers = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55];
+let sum = 0; 
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+};
+console.log(sum)
 
-
+function sumNumbers(...a) {
+    let sum = 0;
+    for (let i = 0; i < a.length; i++) {
+        sum += a[i];
+    };
+    return sum;
+};
+console.log(sumNumbers(1,2,3,4,5,6,7,8));
 
 
 
