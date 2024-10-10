@@ -38,16 +38,16 @@ const numbers = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55];
 let sum = 0; 
 for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
-};
+}
 console.log(sum)
 
 function sumNumbers(...a) {
     let sum = 0;
     for (let i = 0; i < a.length; i++) {
         sum += a[i];
-    };
+    }
     return sum;
-};
+}
 console.log(sumNumbers(1,2,3,4,5,6,7,8));
 
 
@@ -62,9 +62,20 @@ console.log("Task: B");
 
 const fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi', 'mango', 'pineapple', 'pear', 'peach', 'plum', 'watermelon', 'blueberry', 'raspberry', 'blackberry', 'strawberry', 'cherry', 'lemon', 'lime', 'pomegranate', 'apricot'];
 
+for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i] === "raspberry") {
+        console.log(i);
+    }
+}
 
-
-
+function findFruit(Array, fruitName) {
+    for (let i = 0; i < Array.length; i++) {
+        if (Array[i] === fruitName) {
+            return i;
+        }
+    }
+}
+console.log(findFruit(fruits, "grape"))
 
 
 
@@ -78,8 +89,14 @@ const fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi', 'mango', 'pineappl
 */
 console.log("Task: C");
 
+const fruitsStartingWithB = [];
 
-
+for (i = 0; i < fruits.length; i++) {
+    if (fruits[i].startsWith("b")) {
+        fruitsStartingWithB.push(fruits[i]);
+    }
+}
+console.log(fruitsStartingWithB.length);
 
 
 
@@ -91,8 +108,14 @@ console.log("Task: C");
     * Print the count.
 */
 console.log("Task: D");
+let count = 0;
 
-
+for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i].length > 8) {
+        count++;
+    }
+}
+console.log(count);
 
 
 
@@ -106,3 +129,26 @@ console.log("Task: E");
 
 const A = [1, 4, 5, "Bananas", true, 3.14, 9.81];
 const B = [1, 3.14, 5, 9.81, true, 4, "Bananas"];
+
+let equal = true;
+
+if (A.length === B.length) {
+    for (let i = 0; i < A.length; i++) {
+        if (!B.includes(A[i])) {
+            equal = false;
+            break;
+        }
+    }
+    if (equal) {
+        for (let i = 0; i < B.length; i++) {
+            if(!A.includes(B[i])) {
+                equal = false;
+                break;
+            }
+        }
+    }
+    console.log("Are list A and B the same?", equal);
+} else {
+    equal = false;
+    console.log("The lists are not the same length");
+}
